@@ -13,7 +13,7 @@ node {
     def SONAR_PROJECT_KEY = "${JOB_NAME}"
     
     stage('SCM'){
-        git 'https://github.com/liwei2151284/project-examples.git'
+        git 'https://github.com/hehetc/meeting-server.git'
     }
     
     stage('set env'){
