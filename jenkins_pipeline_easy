@@ -1,7 +1,17 @@
- stage("build & SonarQube analysis") {
-          node {
-              withSonarQubeEnv('sonarqube7.1') {
-                 sh 'mvn clean package sonar:sonar'
-              }
-          }
-      }
+
+pipeline { 
+    agent any 
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+      stage("build & SonarQube analysis") {
+               node {
+                   withSonarQubeEnv('sonarqube7.1') {
+                      sh 'mvn clean package sonar:sonar'
+                   }
+               }
+           }
+     }
+    
+}
