@@ -5,6 +5,9 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
+         stage('SCM'){
+            git 'https://github.com/hehetc/meeting-server.git'
+        }
       stage("build & SonarQube analysis") {
                node {
                    withSonarQubeEnv('sonarqube7.1') {
