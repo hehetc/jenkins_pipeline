@@ -1,9 +1,6 @@
 
 pipeline { 
     agent any 
-    options {
-        skipStagesAfterUnstable()
-    }
     stages {
          stage('SCM'){
             git 'https://github.com/hehetc/meeting-server.git'
